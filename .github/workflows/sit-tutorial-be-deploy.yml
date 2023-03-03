@@ -1,4 +1,4 @@
-name: UAT - Tutorial BE Deploy
+name: SIT - Tutorial BE Deploy
 on:
   workflow_dispatch:
     inputs:
@@ -11,7 +11,7 @@ env:
   REPOSITORY: "nattawrj/user22-tutorial-backend"
   GITREF:  ${{ github.event.inputs.ref }}
   ARTIFACT_NAME: "artifact-tutorial-backend"
-  APP_RESOURCE_NAME: app-user22-az-usw3-dev-001
+  APP_RESOURCE_NAME: app-user22-az-usw3-uat-001
 
 jobs:
   deploy-app-service:
@@ -56,5 +56,5 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: ${{ env.REPOSITORY }}
-        event-type: user22-tutorial-be-dast-uat
+        event-type: user22-tutorial-be-dast-sit
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
