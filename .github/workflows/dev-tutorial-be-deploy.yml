@@ -52,11 +52,11 @@ jobs:
 
   deploy-app-service:
     name: Deploy
-    runs-on: [ self-hosted, user22-sbx, vm-user22SelfHost-az-usw3-sbx-001 ]
+    runs-on: [ self-hosted, usw3-sbx, vm-user22SelfHost-az-usw3-sbx-001 ]
     needs: [build-app-service]
     environment:
       name: dev
-      url: https://app-user22-az-usw3-dev-001.azurewebsites.net/swagger/index.html
+      url: https://app-<username>-az-<region>-dev-001.azurewebsites.net/swagger/index.html
 
     steps:
     - name: Download Artifact
