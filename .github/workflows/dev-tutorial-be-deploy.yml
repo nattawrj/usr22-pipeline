@@ -56,7 +56,7 @@ jobs:
     needs: [build-app-service]
     environment:
       name: dev
-      url: https://app-<username>-az-<region>-dev-001.azurewebsites.net/swagger/index.html
+      url: https://app-user22-az-usw3-dev-001.azurewebsites.net/swagger/index.html
 
     steps:
     - name: Download Artifact
